@@ -226,6 +226,13 @@ footer a{color:#ffd9b8}
 .fmt td:first-child{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--brown);font-size:.9rem;white-space:pre-line}
 .fmt tr:last-child td{border-bottom:0}
 
+
+.quick{list-style:none;margin:0 0 20px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.quick li{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 7px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);font-weight:700;font-size:.92rem;color:#fff}
+.quick b{width:24px;height:24px;border-radius:50%;background:var(--orange-d);display:grid;place-items:center;font-size:.8rem}
+section.install-top{padding-top:56px}
+@media(max-width:520px){.quick{gap:6px}.quick li{font-size:.8rem;padding:5px 11px 5px 5px;gap:6px}.quick b{width:21px;height:21px;font-size:.72rem}}
+
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -235,11 +242,11 @@ footer a{color:#ffd9b8}
   <div class="wrap">
     <a class="brand" href="#topo"><img src="data:image/webp;base64,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" alt="" width="34" height="34"><span>Lista de Mercado</span></a>
     <nav class="nav" aria-label="Principal">
+      <a href="#instalar">Instalar</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="#formas">Importar</a>
       <a href="#recursos">Recursos</a>
       <a href="#guia">Guia</a>
-      <a href="#instalar">Instalar</a>
       <a href="#duvidas">Dúvidas</a>
       <a class="btn btn-primary" href="#instalar" data-apk>Baixar</a>
     </nav>
@@ -256,8 +263,11 @@ footer a{color:#ffd9b8}
       <p class="lead">A lista de mercado que soma o total sozinha, funciona sem internet e não tem anúncios. Cole do WhatsApp, fotografe a lista de papel ou escaneie um QR code — e marque no verde o que já está no carrinho.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#instalar" data-apk>⬇ Baixar para Android</a>
-        <a class="btn btn-ghost" href="#como-funciona">Ver como funciona</a>
+        <a class="btn btn-ghost" href="#instalar">Como instalar ↓</a>
       </div>
+      <ol class="quick" aria-label="Instalação em 3 passos">
+        <li><b>1</b> Baixe o APK</li><li><b>2</b> Permita a instalação</li><li><b>3</b> Abra o app</li>
+      </ol>
       <ul class="badges">
         <li>Sem internet</li><li>Sem anúncios</li><li>Sem cadastro</li><li>Gratuito</li><li>Leve no celular</li>
       </ul>
@@ -277,6 +287,28 @@ footer a{color:#ffd9b8}
   </div>
   <div class="shelf" aria-hidden="true"><span>🍎</span><span>🥖</span><span>🧀</span><span>🥛</span><span>🍅</span><span>🥬</span><span>🍊</span></div>
 </div>
+
+<!-- ================= INSTALAR ================= -->
+<section id="instalar" class="alt install-top">
+  <div class="wrap install">
+    <div>
+      <p class="kicker">Instalação</p>
+      <h2>Baixe o APK e instale em um minuto.</h2>
+      <p class="sub">O aplicativo é distribuído direto aqui, como arquivo APK, e não pela Play Store.</p>
+      <a class="btn btn-primary" href="#" data-apk>⬇ Baixar para Android</a>
+      <p class="meta" style="color:var(--cocoa);margin-top:12px" data-meta></p>
+      <div class="note"><b>Por que o Android avisa?</b> Todo app instalado fora da loja mostra um aviso de segurança. É o comportamento normal do Android, e não significa que há algum problema com o arquivo.</div>
+    </div>
+    <ol class="ol">
+      <li><b>Baixe o arquivo</b> <code data-file>ListaDeMercado.apk</code> pelo botão ao lado, no próprio celular, e abra-o quando terminar.</li>
+      <li><b>Permita a instalação</b> quando o Android perguntar sobre “instalar apps desconhecidos” para o seu navegador. É só desta vez.</li>
+      <li><b>Se o Play Protect avisar</b>, toque em “Mais detalhes” e depois em “Instalar mesmo assim”.</li>
+      <li><b>Abra o app</b>, crie a primeira lista e experimente importar uma do WhatsApp.</li>
+      <li><b>Atualizar:</b> baixe a versão nova e instale por cima. Suas listas continuam lá.</li>
+    </ol>
+  </div>
+</section>
+
 
 <!-- ================= COMO FUNCIONA ================= -->
 <section id="como-funciona">
@@ -580,27 +612,6 @@ LEITE</td><td>Letra de forma vira “Arroz” e “Leite”.</td></tr>
   </div>
 </section>
 
-<!-- ================= INSTALAR ================= -->
-<section id="instalar">
-  <div class="wrap install">
-    <div>
-      <p class="kicker">Instalação</p>
-      <h2>Baixe o APK e instale em um minuto.</h2>
-      <p class="sub">O aplicativo é distribuído direto aqui, como arquivo APK, e não pela Play Store.</p>
-      <a class="btn btn-primary" href="#" data-apk>⬇ Baixar para Android</a>
-      <p class="meta" style="color:var(--cocoa);margin-top:12px" data-meta></p>
-      <div class="note"><b>Por que o Android avisa?</b> Todo app instalado fora da loja mostra um aviso de segurança. É o comportamento normal do Android, e não significa que há algum problema com o arquivo.</div>
-    </div>
-    <ol class="ol">
-      <li><b>Baixe o arquivo</b> <code data-file>ListaDeMercado.apk</code> pelo botão ao lado, no próprio celular, e abra-o quando terminar.</li>
-      <li><b>Permita a instalação</b> quando o Android perguntar sobre “instalar apps desconhecidos” para o seu navegador. É só desta vez.</li>
-      <li><b>Se o Play Protect avisar</b>, toque em “Mais detalhes” e depois em “Instalar mesmo assim”.</li>
-      <li><b>Abra o app</b>, crie a primeira lista e experimente importar uma do WhatsApp.</li>
-      <li><b>Atualizar:</b> baixe a versão nova e instale por cima. Suas listas continuam lá.</li>
-    </ol>
-  </div>
-</section>
-
 <!-- ================= DÚVIDAS ================= -->
 <section id="duvidas" class="alt">
   <div class="wrap" style="max-width:820px">
@@ -643,8 +654,8 @@ LEITE</td><td>Letra de forma vira “Arroz” e “Leite”.</td></tr>
 const CONFIG = {
   apkUrl: "https://github.com/fakegoblinn/lista-de-mercado/releases/latest/download/ListaDeMercado.apk",        // link DIRETO do arquivo .apk (ex.: GitHub Releases). Vazio = botão mostra "Download em breve".
   fileName: "ListaDeMercado.apk", // nome do arquivo para o usuário. Renomeie o APK baixado do EAS com este nome.
-  version: "1.0.0",  // versão do app
-  sizeMb: "98.2 MB",        // tamanho do arquivo, ex.: "42 MB" (opcional)
+  version: "1.0.1",  // versão do app
+  sizeMb: "103.91 MB",        // tamanho do arquivo, ex.: "42 MB" (opcional)
   minAndroid: "7.0", // versão mínima do Android (confirme no build final)
   author: "FakeGoblinn",        // ex.: "Seu Nome" (opcional)
   contactUrl: "fernandesmatheus2010.meet@gmail.com"     // ex.: "mailto:voce@exemplo.com" ou link de rede social (opcional)
